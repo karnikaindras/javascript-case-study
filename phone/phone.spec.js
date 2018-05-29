@@ -1,7 +1,7 @@
 var PhoneNumber = require('./phone');
 
 describe('PhoneNumber()', function () {
-  it('cleans the number', function () {
+  xit('cleans the number', function () {
     var phone = new PhoneNumber('(223) 456-7890');
     expect(phone.number()).toEqual('2234567890');
   });
@@ -11,7 +11,7 @@ describe('PhoneNumber()', function () {
     expect(phone.number()).toEqual('2234567890');
   });
 
-  xit('cleans numbers with multiple spaces', function () {
+  it('cleans numbers with multiple spaces', function () {
     var phone = new PhoneNumber('223 456   7890   ');
     expect(phone.number()).toEqual('2234567890');
   });
