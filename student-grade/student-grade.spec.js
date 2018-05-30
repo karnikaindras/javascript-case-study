@@ -11,13 +11,13 @@ describe('School', function () {
     expect(school.roster()).toEqual({});
   });
 
-  xit('adding a student adds them to the roster for the given grade', function () {
+  it('adding a student adds them to the roster for the given grade', function () {
     school.add('Aamir', 2);
     var expectedDb = { 2: [ 'Aamir' ] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xit('adding more students to the same grade adds them to the roster', function () {
+  it('adding more students to the same grade adds them to the roster', function () {
     school.add('Bhavana', 2);
     school.add('James', 2);
     school.add('Pari', 2);
@@ -25,26 +25,26 @@ describe('School', function () {
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xit('adding students to different grades adds them to the roster', function () {
+  it('adding students to different grades adds them to the roster', function () {
     school.add('Chetan', 3);
     school.add('Shruti', 7);
     var expectedDb = { 3: [ 'Chetan' ], 7: [ 'Shruti' ] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xit('grade returns the students in that grade in alphabetical order', function () {
+  it('grade returns the students in that grade in alphabetical order', function () {
     school.add('Faizan', 5);
     school.add('Tanveer', 5);
     school.add('Sapna', 1);
-    var expectedStudents = [ 'Tanveer', 'Faizan' ];
+    var expectedStudents = [ 'Faizan', 'Tanveer' ];
     expect(school.grade(5)).toEqual(expectedStudents);
   });
 
-  xit('grade returns an empty array if there are no students in that grade', function () {
+  it('grade returns an empty array if there are no students in that grade', function () {
     expect(school.grade(1)).toEqual([]);
   });
 
-  xit('the students names in each grade in the roster are sorted', function () {
+  it('the students names in each grade in the roster are sorted', function () {
     school.add('Jennifer', 4);
     school.add('Kareem', 6);
     school.add('Christopher', 4);
